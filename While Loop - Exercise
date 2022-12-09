@@ -1,0 +1,213 @@
+package WhileLoopExc;
+
+import java.util.Scanner;
+
+public class E1OldBooks {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String books = scanner.nextLine();
+        int couter = 0;
+        boolean isFound=false;
+        String text = scanner.nextLine();
+        while (!text.equals("No More Books")) {
+            if (books.equals(text)) {
+                isFound=true;
+                break;
+            }
+            couter++;
+            text = scanner.nextLine();
+        }
+        if (isFound) {
+            System.out.printf("You checked %d books and found it.", couter);
+        } else {
+            System.out.println("The book you search is not here!");
+            System.out.printf("You checked %d books.", couter);
+        }
+    }
+}
+...........................................................
+package WhileLoopExc;
+
+import java.util.Scanner;
+
+public class E2ExamPreparation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int poorGrade = Integer.parseInt(scanner.nextLine());
+        String task = scanner.nextLine();
+        int poorGradecouter = 0;
+        int allGradeCount =0;
+        int allGrades=0;
+        String  lastTask = "";
+        while (!task.equals("Enough")) {
+            lastTask=task;
+            int grade = Integer.parseInt(scanner.nextLine());
+            allGradeCount++;
+            allGrades+=grade;
+            if (grade <= 4) {
+                poorGradecouter++;
+            }
+            if (poorGrade == poorGradecouter) {
+                break;
+            }
+
+            task = scanner.nextLine();
+        }
+        double averageScore = 1.0*allGrades/allGradeCount;
+        if(poorGrade==poorGradecouter){
+            System.out.printf("You need a break, %d poor grades.", poorGradecouter);
+        }else {
+            System.out.printf("Average score: %.2f\n",averageScore);
+            System.out.printf("Number of problems: %d\n", allGradeCount);
+            System.out.printf("Last problem: %s",lastTask);
+        }
+    }
+}
+.................................................
+package WhileLoopExc;
+
+import java.util.Scanner;
+
+public class E3Vacation {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        double needMoney = Double.parseDouble(scanner.nextLine());
+        double moneybyHand = Double.parseDouble(scanner.nextLine());
+        int spendDay=0;
+int alldays =0;
+        while (moneybyHand<needMoney){
+            String action = scanner.nextLine();
+            double sum = Double.parseDouble(scanner.nextLine());
+            alldays++;
+            switch (action){
+                case "spend":
+                    moneybyHand-=sum;
+                    if (moneybyHand < 0) {
+                        moneybyHand=0;
+                    }
+                    spendDay++;
+                    break;
+                case "save":
+                    moneybyHand+=sum;
+                    spendDay=0;
+                    break;
+            }
+
+            if(spendDay==5){
+                break;
+        }
+        }
+        if (moneybyHand>=needMoney){
+            System.out.printf("You saved the money for %d days.", alldays);
+        }else {
+            System.out.println("You can't save the money.");
+            System.out.printf("%d",alldays);
+        }
+}}
+............................................................
+package WhileLoopExc;
+
+import java.util.Scanner;
+
+public class E4Walking {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String comand = scanner.next();
+        int target =10000;
+        int overTarget =0;
+        int sumStep = 0;
+        while(!comand.equals("Going home" )) {
+            int step = Integer.parseInt(comand);
+            sumStep = sumStep+step;
+            overTarget= sumStep-target;
+            if(sumStep>=target){
+                System.out.println("Goal reached! Good job!");
+                
+                System.out.println(overTarget+" steps over the goal!");
+                break;
+          }
+            comand= scanner.next();
+
+        }
+
+        if(comand.equals("Going home")){
+            comand = scanner.next();
+            int lastStep = Integer.parseInt(comand);
+            sumStep = sumStep+lastStep;
+            if (sumStep>=target){
+                overTarget = sumStep-target;
+                System.out.println("Goal reached! Good job!");
+                
+                System.out.println(overTarget+" steps over the goal!");
+            }else {
+
+                System.out.printf("%d more step to reach goal.", Math.abs(target-sumStep));
+           }}
+    }
+}
+....................................................
+package WhileLoopExc;
+
+import java.util.Scanner;
+
+public class E5Coins {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double sum = Double.parseDouble(scanner.nextLine());
+
+        sum = Math.floor(sum * 100);
+        int coins = 0;
+        while (sum > 0) {
+            if (sum >= 200) {
+                sum -= 200;
+            } else if (sum >= 100) {
+                sum -= 100;
+            } else if (sum >= 50) {
+                sum -= 50;
+            } else if (sum >= 20) {
+                sum -= 20;
+            } else if (sum >= 10) {
+                sum -= 10;
+            } else if (sum >= 5) {
+                sum -= 5;
+            } else if (sum >= 2) {
+                sum -= 2;
+            } else if (sum >= 1) {
+                sum -= 1;
+            }
+            coins++;
+        }
+        System.out.println(coins);
+
+    }
+}
+.................................................
+package WhileLoopExc;
+
+import java.util.Scanner;
+
+public class EE6Cake {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        int width= Integer.parseInt(scanner.nextLine());
+        int length= Integer.parseInt(scanner.nextLine());
+        int allCakePies= width*length;
+        boolean isFinich = false;
+        String  command = scanner.nextLine();
+        while (!command.equals("STOP" )){
+            int currentPieces = Integer.parseInt(command);
+            allCakePies=allCakePies-currentPieces ;
+            if(allCakePies<=0){
+                isFinich=true;
+                break;
+            }
+            command = scanner.nextLine();
+        }if(isFinich){
+            System.out.printf("No more cake left! You need %d pieces more.",Math.abs(allCakePies));
+        }else {
+            System.out.printf("%d pieces are left.",allCakePies);
+        }
+    }
+}
+.....................................................
