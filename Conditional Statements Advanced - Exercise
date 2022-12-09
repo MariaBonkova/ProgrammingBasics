@@ -1,0 +1,374 @@
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class E1Cinema {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        //В една кинозала столовете са наредени в правоъгълна форма в r реда и c колони. Има три вида прожекции с билети на различни цени:
+        //•	 – премиерна прожекция, на цена 12.00 лева.
+        //•	 – стандартна прожекция, на цена 7.50 лева.
+        //•	Discount – прожекция за деца, ученици и студенти на намалена цена от 5.00 лева.
+        //Напишете програма, която чете тип прожекция (стринг), брой редове и брой колони в залата (цели числа),
+        // въведени от потребителя, и изчислява общите приходи от билети при пълна зала.
+        // Резултатът да се отпечата във формат като в примерите по-долу, с 2 знака след десетичната точка.
+        String film  = scanner.nextLine();
+        int rows = Integer.parseInt(scanner.nextLine());
+        int colons = Integer.parseInt(scanner.nextLine());
+        double price = 0;
+        if (film.equals("Premiere")){
+            price+=rows*colons*12.00;
+        }else if (film.equals("Normal")){
+            price+=rows*colons*7.50;
+        }else {
+            price+=rows*colons*5.00;
+
+        }
+        System.out.printf("%.2f leva",price);
+    }
+}
+.................................................................
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class e2SummerOutfit {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //•	Градусите - цяло число в интервала [10…42]
+        //•	Текст, време от денонощието - с възможности - , "", ""
+        int degrees = Integer.parseInt(scanner.nextLine());
+        String dayAndNight = scanner.nextLine();
+        if (dayAndNight.equals("Morning")) {
+            if (degrees >= 10 && degrees <= 18) {
+                System.out.printf("It's %d degrees, get your Sweatshirt and Sneakers.", degrees);
+            } else if (degrees >= 18 && degrees <= 24) {
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            } else {
+                System.out.printf("It's %d degrees, get your T-Shirt and Sandals.", degrees);
+            }
+        } else if (dayAndNight.equals("Afternoon")) {
+            if (degrees >= 10 && degrees <= 18) {
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            } else if (degrees >= 18 && degrees <= 24) {
+                System.out.printf("It's %d degrees, get your T-Shirt and Sandals.", degrees);
+            } else {
+                System.out.printf("It's %d degrees, get your Swim Suit and Barefoot.", degrees);
+            }
+
+        } else {
+            if (degrees >= 10 && degrees <= 18) {
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            } else if (degrees >= 18 && degrees <= 24) {
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            } else {
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            }
+
+        }
+    }
+}
+..................................................................
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class e3NewHouse {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+
+        String nameOfFlowers  = scanner.nextLine();
+        int quantityFlowers =Integer.parseInt(scanner.nextLine());
+        int budget =Integer.parseInt(scanner.nextLine());
+        double price=0;
+        if(nameOfFlowers.equals("Roses")){
+            price=quantityFlowers*5;
+            if (quantityFlowers>80){
+                price=price-(price*0.10);
+            }
+        }else if(nameOfFlowers.equals("Dahlias")){
+            price=quantityFlowers*3.80;
+            if (quantityFlowers>90){
+                price=price-(price*0.15);
+            }
+        }else if(nameOfFlowers.equals("Tulips")){
+            price=quantityFlowers*2.80;
+            if (quantityFlowers>80){
+                price=price-(price*0.15);
+            }
+        }else if(nameOfFlowers.equals("Narcissus")){
+            price=quantityFlowers*3;
+            if (quantityFlowers<120){
+                price=price+(price*0.15);
+            }
+        }else if(nameOfFlowers.equals("Gladiolus")){
+            price=quantityFlowers*2.50;
+            if (quantityFlowers<80){
+                price=price+(price*0.20);
+            }
+        }
+        double diff = Math.abs(budget-price);
+        if (budget >= price) {
+            System.out.printf("Hey, you have a great garden with %d %s and %.2f leva left.",quantityFlowers,nameOfFlowers,diff);
+        }else {
+            System.out.printf("Not enough money, you need %.2f leva more.",diff);
+        }
+
+
+    }
+}
+.......................................................................
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class e4FishingBoat {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+
+        int budget =Integer.parseInt(scanner.nextLine());
+        String  season = scanner.nextLine();
+        int fisher = Integer.parseInt(scanner.nextLine());
+        double rent=0;
+
+        if(season.equals("Spring")){
+            rent = rent+3000;
+        }else if(season.equals("Summer")||season.equals("Autumn")){
+            rent=rent+4200;
+        }else if(season.equals("Winter")){
+            rent=rent+2600;
+        }
+        if(fisher<=6){
+            rent = rent-(rent*0.10);
+        }else if (fisher>=7 && fisher<=11){
+            rent =rent-(rent*0.15);
+        }else if(fisher>12){
+            rent =rent-(rent*0.25);
+        }
+        if(!season.equals("Autumn")){
+            if(fisher%2==0){
+                rent =rent-(rent*0.05);
+            }
+        }
+        double diff =Math.abs(budget-rent);
+        if(budget>=rent){
+            System.out.printf("Yes! You have %.2f leva left.",diff);
+        }else {
+            System.out.printf("Not enough money! You need %.2f leva.",diff);
+        }
+
+    }
+}
+.....................................................
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class e5Journey {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double budget = Double.parseDouble(scanner.nextLine());
+        String season = scanner.nextLine();
+        String location = "";
+        String place = "";
+        double price = 0;
+
+        // Ако е в Европа, независимо от сезона ще почива в хотел.
+        // Всеки къмпинг или хотел, според дестинацията, има собствена цена която отговаря на даден процент от бюджета:
+        //•	При 100лв. или по-малко – някъде в България
+        if (budget <= 100) {
+            location = "Bulgaria";
+            if (season.equals("summer")) {
+                place = "Camp";
+                price = budget * 0.30;
+            } else if (season.equals("winter")) {
+                place = "Hotel";
+                price = budget * 0.70;
+            }
+
+        } else if (budget <= 1000) {
+            location = "Balkans";
+            if (season.equals("summer")) {
+                place = "Camp";
+                price = budget * 0.40;
+            } else if (season.equals("winter")) {
+                place = "Hotel";
+                price = budget * 0.80;
+            }
+        } else if (budget > 1000) {
+            location = "Europe";
+            if (season.equals("summer") || season.equals("winter")) {
+                place = "Hotel";
+                price = budget * 0.90;
+            }
+        }
+        System.out.printf("Somewhere in %s\n",location);
+        System.out.printf("%s - %.2f",place,price);
+    }
+}
+....................................................................
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class e61OperationsBetweenNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N1 = Integer.parseInt(scanner.nextLine());
+        int N2 = Integer.parseInt(scanner.nextLine());
+        String simbol = scanner.nextLine();
+        double result = 0.0;
+        String type = "";
+        if (simbol.equals("+")) {
+            result = N1 + N2;
+            if (result % 2 == 0) {
+                type = "even";
+            } else {
+                type = "odd";
+            }
+            System.out.printf("%d %s %d = %.0f - %s", N1, simbol, N2, result, type);
+
+        } else if (simbol.equals("-")) {
+            result = N1 - N2;
+            if (result % 2 == 0) {
+                type = "even";
+            } else {
+                type = "odd";
+            }
+            System.out.printf("%d %s %d = %.0f - %s", N1, simbol, N2, result, type);
+
+        } else if (simbol.equals("*")) {
+            result = N1 * N2;
+            if (result % 2 == 0) {
+                type = "even";
+            } else {
+                type = "odd";
+            }
+            System.out.printf("%d %s %d = %.0f - %s", N1, simbol, N2, result, type);
+
+        } else if (simbol.equals("/")) {
+            result = 1.0 * N1 / N2;
+            if (N2 == 0) {
+                System.out.printf("Cannot divide %d by zero", N1);
+            } else {
+                System.out.printf("%d / %d = %.2f ", N1, N2, result);
+            }
+
+
+        } else if (simbol.equals("%")) {
+            result = 1.0 * N1 % N2;
+            if (N2 == 0) {
+                System.out.printf("Cannot divide %d by zero", N1);
+            } else {
+                System.out.printf("%d %% %d = %.0f ", N1, N2, result);
+            }
+        }
+    }
+}
+............................................................
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class e7HotelRoom {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String months = scanner.nextLine();
+        int nigths = Integer.parseInt(scanner.nextLine());
+        double studioPrice = 0;
+        double app = 0;
+
+        switch (months) {
+            case "May":
+            case "October":
+                studioPrice = 50;
+                app = 65;
+                if (nigths >7 && nigths<14) {
+                    studioPrice*= 0.95;
+                }else if (nigths >=14) {
+                    studioPrice*=0.70;
+                }
+                break;
+            case "June":
+            case "September":
+                studioPrice = 75.20;
+                if (nigths > 14) {
+                   studioPrice*= 0.80; }
+                 app = 68.70;
+
+        break;
+        case "July":
+        case "August":
+        studioPrice = 76;
+        app = 77;
+        break;
+        }
+        if (nigths > 14)
+            app = app * 0.90;
+        System.out.printf("Apartment: %.2f lv.\n",app*nigths);
+        System.out.printf("Studio: %.2f lv.",studioPrice*nigths);
+
+    }
+}
+.............................................................
+package ConditionalStatementsAdvancedExs;
+
+import java.util.Scanner;
+
+public class e8OnTimeForTheExam {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        //•	Първият ред съдържа час на изпита – цяло число от 0 до 23.
+        //•	Вторият ред съдържа минута на изпита – цяло число от 0 до 59.
+        //•	Третият ред съдържа час на пристигане – цяло число от 0 до 23.
+        //•	Четвъртият ред съдържа минута на пристигане – цяло число от 0 до 59.
+        int hoursExam=Integer.parseInt(scanner.nextLine());
+        int minExam=Integer.parseInt(scanner.nextLine());
+        int hoursToArrive=Integer.parseInt(scanner.nextLine());
+        int minToArrive=Integer.parseInt(scanner.nextLine());
+
+        //Той идва в изпитната зала в даден час на пристигане.
+        // Счита се, че студентът е дошъл навреме,
+        // ако е пристигнал в часа на изпита или до половин час преди това.
+        // Ако е пристигнал по-рано повече от 30 минути, той е подранил.
+        // Ако е дошъл след часа на изпита, той е закъснял.
+        // Напишете програма, която прочита време на изпит и време на пристигане и отпечатва дали студентът е дошъл навреме,
+        // дали е подранил или е закъснял и с колко часа или минути е подранил или закъснял.
+
+        int examTime=hoursExam*60+minExam;//840
+        int arriveTime=hoursToArrive*60+minToArrive;//835
+        if(arriveTime< examTime-30){
+            System.out.println("Early");
+            int diff=Math.abs(arriveTime-examTime);
+            if(diff<60){
+                System.out.printf("%d minutes before the start",diff);
+            }else {
+                int h =diff/60;
+                int m = diff%60;
+                System.out.printf("%d:%02d hours before the start",h,m);
+            }
+
+
+        }else if(arriveTime<=examTime){
+            System.out.println("On time");
+            int diff=Math.abs(arriveTime-examTime);
+            System.out.printf("%d minutes before the start",diff);
+
+        }else {
+            System.out.println("Late");
+            int diff=Math.abs(arriveTime-examTime);
+            if(diff<60){
+                System.out.printf("%d minutes after the start",diff);
+            }else {
+                int h =diff/60;
+                int m = diff%60;
+                System.out.printf("%d:%02d hours after the start",h,m);
+            }
+
+        }
+    }
+}
+................................................................
+
+
