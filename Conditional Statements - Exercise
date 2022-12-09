@@ -1,0 +1,137 @@
+package ConditionalStatementsExc;
+
+import java.util.Scanner;
+
+public class E1SumSeconds {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int timeFirst = Integer.parseInt(scanner.nextLine());
+        int timeSecond = Integer.parseInt(scanner.nextLine());
+        int timeThird = Integer.parseInt(scanner.nextLine());
+        int totalTime = timeFirst+timeSecond+timeThird;
+        int min = totalTime / 60;
+        int sec = totalTime % 60;
+
+                if (sec<10){
+                    System.out.printf("%d:0%d", min, sec );
+                } else {
+                    System.out.printf ("%d:%d", min, sec);
+                }
+    }
+}
+...............................................................
+package ConditionalStatementsExc;
+
+import java.util.Scanner;
+
+public class E2BonusScore {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number = Integer.parseInt(scanner.nextLine());
+        double bonus = 0;
+        if (number <= 100) {
+            bonus = 5;
+        } else if (number > 1000) {
+            bonus = number * 0.10;
+        } else {
+            bonus = number * 0.20;
+        }
+        if (number % 2 == 0) {
+            bonus += 1;
+        } else  if (number % 10 == 5) {
+            bonus += 2;}
+
+        System.out.println(bonus);
+        System.out.println(bonus+number);
+    }
+}
+...................................................................
+package ConditionalStatementsExc;
+
+import java.util.Scanner;
+
+public class E5Time15Minutes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int hours = Integer.parseInt(scanner.nextLine());
+        int minutes = Integer.parseInt(scanner.nextLine());
+        minutes = minutes +15;
+      
+        if (minutes > 59){
+            hours = hours + 1;
+            minutes = minutes - 60;
+        }
+        if (hours > 23){
+            hours = hours - 24;
+        }
+
+        // за водеща нула :
+        if (minutes < 10) {
+            System.out.printf("%d:0%d", hours, minutes);
+        } else {
+            System.out.printf("%d:%d", hours, minutes);
+        }
+    }
+}
+................................................................
+package ConditionalStatementsExc;
+
+import java.util.Scanner;
+
+public class E6GodzillaVsKong {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double budget = Double.parseDouble(scanner.nextLine());
+        int statist = Integer.parseInt(scanner.nextLine());
+        double priceWear= Double.parseDouble(scanner.nextLine());
+        double decor = budget*0.1;
+
+                if (statist>150){
+                    priceWear *= 0.9;
+                }
+                double expenses = decor+statist*priceWear;
+
+            if (expenses>budget){
+                System.out.println("Not enough money!");
+                System.out.printf("Wingard needs %.2f leva more.",expenses-budget);
+            } else {
+                System.out.println("Action!");
+                System.out.printf("Wingard starts filming with %.2f leva left.",budget-expenses);}
+
+
+        }
+
+
+
+    }
+........................................................
+package ConditionalStatementsExc;
+
+import java.util.Scanner;
+
+public class E7WorldSwimmingRecord {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       // Рекордът в секунди – реално число в интервала [0.00 … 100000.00]
+      //  2. Разстоянието в метри – реално число в интервала [0.00 … 100000.00]
+      //  3. Времето в секунди, за което плува разстояние от 1 м. - реално число в интервала [0.00 … 1000.00]
+
+        double recordInSeconds = Double.parseDouble(scanner.nextLine());
+        double distansMeters = Double.parseDouble(scanner.nextLine());
+        double timeInSecByMeters = Double.parseDouble(scanner.nextLine());
+        double swimmingIvan = distansMeters*timeInSecByMeters;
+        double delay = Math.floor(distansMeters/15)*12.5;
+        double recordIvan = swimmingIvan+delay;
+
+        if(recordIvan<recordInSeconds){
+            System.out.printf("Yes, he succeeded! The new world record is %.2f seconds.", recordIvan);
+        }
+        else {
+            System.out.printf("No, he failed! He was %.2f seconds slower.", recordIvan-recordInSeconds);
+
+        }
+
+    }
+}
+.........................................................
+
