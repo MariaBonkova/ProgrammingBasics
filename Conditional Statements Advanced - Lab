@@ -1,0 +1,481 @@
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P1DayofWeek {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = Integer.parseInt(scanner.nextLine());
+        switch (num){
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Error");
+                break;
+        }
+
+    }
+}
+..............................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P2WeekendorWorkingDay {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String day = scanner.nextLine();
+        switch (day){
+            case "Monday":
+            case "Tuesday":
+            case "Wednesday":
+            case "Thursday":
+            case "Friday":
+                System.out.println("Working day");
+                break;
+            case "Saturday":
+            case "Sunday":
+                System.out.println("Weekend");
+                break;
+            default:
+                System.out.println("Error");
+                break;
+        }
+    }
+
+}
+...............................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P3AnimalType {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+String animal = scanner.nextLine();
+switch (animal){
+    case "dog":
+        System.out.println("mammal");
+        break;
+    case "crocodile":
+    case "tortoise":
+    case "snake":
+        System.out.println("reptile");
+        break;
+    default:
+        System.out.println("unknown");
+        break;
+
+
+}
+
+    }
+}
+
+.................................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P4PersonalTitles {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double age = Double.parseDouble(scanner.nextLine());
+        String gender = scanner.nextLine();
+        
+         if (gender.equals("m")) {
+             if (age >= 16) {
+                 System.out.println("Mr.");
+             } else {
+                 System.out.println("Master");
+             }
+
+         } else if (gender.equals("f")){
+        if (age>=16){
+            System.out.println("Ms.");
+        }else {
+            System.out.println("Miss");
+        }
+        }
+    }
+}
+..........................................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P5SmallShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String product = scanner.nextLine();
+        String sity = scanner.nextLine();
+        double quantity = Double.parseDouble(scanner.nextLine());
+       double amount =0;
+        if (sity.equals("Sofia")) {
+            if (product.equals("coffee")) {
+                amount = 0.5;
+            } else if (product.equals("water")) {
+                amount = 0.80;
+            } else if (product.equals("beer")) {
+                amount = 1.20;
+            } else if (product.equals("sweets")) {
+                amount = 1.45;
+            } else  if (product.equals("peanuts")) {
+            amount = 1.60;
+
+        } else if (sity.equals("Plovdiv")) {
+            if (product.equals("coffee")) {
+                amount = 0.40;
+            } else if (product.equals("water")) {
+                amount = 0.70;
+            } else if (product.equals("beer")) {
+                amount = 1.15;
+            } else if (product.equals("sweets")) {
+                amount = 1.30;
+            } else if (product.equals("peanuts")){
+                amount = 1.50;
+            }
+
+        } else if (sity.equals("Varna")) {
+            if (product.equals("coffee")) {
+                amount = 0.45;
+            } else if (product.equals("water")) {
+                amount = 0.70;
+            } else if (product.equals("beer")) {
+                amount = 1.10;
+            } else if (product.equals("sweets")) {
+                amount = 1.35;
+            } else if (product.equals("peanuts")) {
+                amount = 1.55;
+            }
+
+        }
+
+
+
+
+    }
+        System.out.println(amount * quantity);
+}}
+.................................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P6NumberRange {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = Integer.parseInt(scanner.nextLine());
+        if (num >=-100 && num<=100 && num !=0){
+            System.out.println("Yes");
+        }else {
+            System.out.println("No");
+        }
+
+    }
+}
+.............................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P7WorkingHours {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = Integer.parseInt(scanner.nextLine());
+        String day = scanner.nextLine();
+
+       String type = "";
+       if(num >=10 && num <= 18){
+           if (day.equals("Monday") ||day.equals("Tuesday") ||day.equals("Wednesday") ||day.equals("Thursday") ||day.equals("Friday") ||day.equals("Saturday")){
+               type = "open";
+           }else {
+               type = "closed";
+           }System.out.println(type);
+}}}
+..................................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P8CinemaTicket {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String day  = scanner.nextLine();
+
+        if(day.equals("Monday")  || day.equals("Tuesday") || day.equals("Friday")){
+            System.out.println(12);
+        }else  if (day.equals("Wednesday")|| day.equals("Thursday")){
+            System.out.println(14);
+        }else if (day.equals("Saturday")||day.equals("Sunday")){
+            System.out.println(16);
+        }
+    }
+}
+.........................................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P9FruitVegetable {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        switch (input) {
+        case "banana":
+        case "apple":
+        case "kiwi":
+        case "cherry":
+        case "lemon":
+        case "grapes":
+        System.out.println("fruit");
+        break;
+        case "tomato":
+        case "cucumber":
+        case "pepper":
+        case "carrot":
+        System.out.println("vegetable");
+        break;
+        default:
+        System.out.println("unknown");
+        break;
+
+    }
+    }
+}
+.................................................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P10InvalidNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = Integer.parseInt(scanner.nextLine());
+
+        boolean inValid = (num >= 100 && num <= 200 || num == 0);
+        if (!inValid) {
+
+            System.out.println("invalid");
+        }
+    }
+}
+.............................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P11FruitShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String frut = scanner.nextLine();
+        String day = scanner.nextLine();
+        double quantity = Double.parseDouble(scanner.next());
+        double price = 0;
+
+    boolean isValid = true;
+
+        if (day.equals("Monday")){
+            if(frut.equals("banana")){
+                price = 2.50;
+            }else if(frut.equals("apple")){
+                price = 1.20;
+            }else if(frut.equals("orange")){
+                price = 0.85;
+            }else if(frut.equals("grapefruit")){
+                price = 1.45;
+            }else if(frut.equals("kiwi")){
+                price = 2.70;
+            }else if(frut.equals("pineapple")){
+                price = 5.50;
+            }else if(frut.equals("grapes")){
+                price = 3.85;
+            }isValid = false;
+
+        }else if (day.equals("Tuesday")){
+            if(frut.equals("banana")){
+                price = 2.50;
+            }else if(frut.equals("apple")){
+                price = 1.20;
+            }else if(frut.equals("orange")){
+                price = 0.85;
+            }else if(frut.equals("grapefruit")){
+                price = 1.45;
+            }else if(frut.equals("kiwi")){
+                price = 2.70;
+            }else if(frut.equals("pineapple")){
+                price = 5.50;
+            }else if(frut.equals("grapes")){
+                price = 3.85;
+            }isValid = false;
+
+        }else if (day.equals("Wednesday")){
+            if(frut.equals("banana")){
+                price = 2.50;
+            }else if(frut.equals("apple")){
+                price = 1.20;
+            }else if(frut.equals("orange")){
+                price = 0.85;
+            }else if(frut.equals("grapefruit")){
+                price = 1.45;
+            }else if(frut.equals("kiwi")){
+                price = 2.70;
+            }else if(frut.equals("pineapple")){
+                price = 5.50;
+            }else if(frut.equals("grapes")){
+                price = 3.85;
+            }isValid = false;
+
+        }else if (day.equals("Thursday")){
+            if(frut.equals("banana")){
+                price = 2.50;
+            }else if(frut.equals("apple")){
+                price = 1.20;
+            }else if(frut.equals("orange")){
+                price = 0.85;
+            }else if(frut.equals("grapefruit")){
+                price = 1.45;
+            }else if(frut.equals("kiwi")){
+                price = 2.70;
+            }else if(frut.equals("pineapple")){
+                price = 5.50;
+            }else if(frut.equals("grapes")){
+                price = 3.85;
+            }isValid = false;
+
+        }else if (day.equals("Friday")){
+            if(frut.equals("banana")){
+                price = 2.50;
+            }else if(frut.equals("apple")){
+                price = 1.20;
+            }else if(frut.equals("orange")){
+                price = 0.85;
+            }else if(frut.equals("grapefruit")){
+                price = 1.45;
+            }else if(frut.equals("kiwi")){
+                price = 2.70;
+            }else if(frut.equals("pineapple")){
+                price = 5.50;
+            }else if(frut.equals("grapes")){
+                price = 3.85;
+            }isValid = false;
+
+        }else if (day.equals("Saturday")){
+            if(frut.equals("banana")){
+                price = 2.70;
+            }else if(frut.equals("apple")){
+                price = 1.25;
+            }else if(frut.equals("orange")){
+                price = 0.90;
+            }else if(frut.equals("grapefruit")){
+                price = 1.60;
+            }else if(frut.equals("kiwi")){
+                price = 3.00;
+            }else if(frut.equals("pineapple")){
+                price = 5.60;
+            }else if(frut.equals("grapes")){
+                price = 4.20;
+            }isValid = false;
+
+        }else if (day.equals("Sunday")){
+            if(frut.equals("banana")){
+                price = 2.70;
+            }else if(frut.equals("apple")){
+                price = 1.25;
+            }else if(frut.equals("orange")){
+                price = 0.90;
+            }else if(frut.equals("grapefruit")){
+                price = 1.60;
+            }else if(frut.equals("kiwi")){
+                price = 3.00;
+            }else if(frut.equals("pineapple")){
+                price = 5.60;
+            }else if(frut.equals("grapes")){
+                price = 4.20;
+            }isValid = false;
+
+            System.out.println("error");
+        }isValid = false;
+
+        System.out.printf("%.2f",price*quantity);
+    }
+
+}
+.......................................................
+package ConditionalStatementsAdvancedLab;
+
+import java.util.Scanner;
+
+public class P12TradeCommissions {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String town = scanner.nextLine();
+        double sales = Double.parseDouble(scanner.nextLine());
+        boolean isValid = true;
+        double commission = 0;
+        if (town.equals("Sofia")) {
+            if (sales >= 0 && sales <= 500) {
+                commission = sales * 0.05;
+            } else if (sales > 500 && sales <= 1000) {
+                commission = sales * 0.07;
+            } else if (sales > 1000 && sales <= 10000) {
+                commission = sales * 0.08;
+            } else if (sales > 10000) {
+                commission = sales * 0.12;
+            }else {
+                isValid = false;
+            }
+
+        } else if (town.equals("Varna")) {
+            if (sales >= 0 && sales <= 500) {
+                commission = sales * 0.045;
+            } else if (sales > 500 && sales <= 1000) {
+                commission = sales * 0.075;
+            } else if (sales > 1000 && sales <= 10000) {
+                commission = sales * 0.10;
+            } else if (sales > 10000) {
+                commission = sales * 0.13;
+            }else {
+            isValid = false;
+                }
+        } else if (town.equals("Plovdiv")) {
+            if (sales >= 0 && sales <= 500) {
+                commission = sales * 0.055;
+            } else if (sales > 500 && sales <= 1000) {
+                commission = sales * 0.08;
+            } else if (sales > 1000 && sales <= 10000) {
+                commission = sales * 0.12;
+            } else if (sales > 10000) {
+                commission = sales * 0.145;
+            }else {
+            isValid = false;}
+        } else {
+            isValid = false;
+        }
+        if (isValid){
+            System.out.printf("%.2f", commission);
+    }else {
+            System.out.println("error");
+        }
+    }
+}
