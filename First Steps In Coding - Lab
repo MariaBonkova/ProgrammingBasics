@@ -5,3 +5,133 @@ public class P1HelloSoftUni {
         System.out.println("Hello SoftUni");
     }
 }
+.........................................................
+package Lab;
+
+public class P2Nums1to10 {
+    public static void main(String[] args) {
+        System.out.println(1);
+        System.out.println(2);
+        System.out.println(3);
+        System.out.println(4);
+        System.out.println(5);
+        System.out.println(6);
+        System.out.println(7);
+        System.out.println(8);
+        System.out.println(9);
+        System.out.println(10);
+    }
+}
+....................................................
+package Lab;
+
+import java.util.Scanner;
+
+public class P3SquareArea {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = Integer.parseInt(scanner.nextLine());
+        int b = a * a ;
+    System.out.println(b);
+
+    }
+}
+.....................................................
+package Lab;
+
+import java.util.Scanner;
+
+public class P4InchestoCentimeters {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double inch = Double.parseDouble(scanner.nextLine());
+        double cm = inch * 2.54;
+        System.out.print(cm);
+
+    }
+}
+.......................................................
+package Lab;
+
+import java.util.Scanner;
+
+public class P5GreetingByName {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.println("Hello, "+ name+"!");
+
+    }
+}
+....................................................
+package Lab;
+
+import java.util.Scanner;
+
+public class P6ConcatenateData {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String firstName = scanner.nextLine();
+        String lasstName = scanner.nextLine();
+        int age = Integer.parseInt(scanner.nextLine());
+        String sity = scanner.nextLine();
+        System.out.printf("You are %s %s, a %d-years old person from %s.",firstName,lasstName,age,sity);
+    }
+
+}
+...........................................................
+package Lab;
+
+import java.util.Scanner;
+
+public class P7ProjectsCreation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //вход
+        String argName = scanner.nextLine();
+        int project = Integer.parseInt(scanner.nextLine());
+        // изчисления
+        int hours = project * 3;
+
+        System.out.println("The architect "+argName+ " will need " +hours+" hours to complete "+project +" project/s."
+        );
+    }
+}
+........................................................
+package Lab;
+
+import java.util.Scanner;
+
+public class P8PetShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //вход
+        int dogs = Integer.parseInt(scanner.nextLine());
+        int animals = Integer.parseInt(scanner.nextLine());
+        //изчисления куче - 2.50лв, жив- 4лв
+        double a = dogs * 2.5;
+        double b = animals * 4;
+
+        System.out.println(a+b);
+    }
+}
+......................................................
+package Lab;
+
+import java.util.Scanner;
+
+public class P9YardGreening {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        double sqm = Double.parseDouble(scanner.nextLine());
+        double yard = sqm * 7.61;
+        double discount = yard * 0.18;
+        double finalPrice =yard - discount;
+        System.out.println("The final price is: "+finalPrice+" lv.");
+        System.out.println("The final discount is: "+discount+" lv."
+        );
+    }
+}
+
