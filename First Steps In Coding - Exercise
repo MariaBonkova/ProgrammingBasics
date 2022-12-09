@@ -1,0 +1,90 @@
+package Exc;
+
+import java.util.Scanner;
+
+public class E1USDtoBGN {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double usd = Double.parseDouble(scanner.nextLine());
+        double bgn = usd * 1.79549;
+        System.out.println(bgn);
+    }
+}
+.................................................
+import java.util.Scanner;
+
+public class E2RadianstoDegrees {
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        double rad = Double.parseDouble(scanner.nextLine());
+        // градус - радиани * 180/pi
+        double deg = rad * 180/Math.PI;
+        System.out.printf("%.0f",deg);
+    }
+}
+...................................................
+package Exc;
+
+import java.util.Scanner;
+
+public class E3DepositCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //вход
+         //1. Депозирана сума – реално число в интервала [100.00 … 10000.00];
+        //2. Срок на депозита(в месеци) – цяло число в интервала [1…12];
+        //3. Годишен лихвен процент – реално число в интервала [0.00 …100.00];
+        double sum = Double.parseDouble(scanner.nextLine());
+        int months = Integer.parseInt(scanner.nextLine());
+        double interestRate  = Double.parseDouble(scanner.nextLine());
+        //сума = депозирана сума + срок на депозита * ((депозирана сума * годишен лихвен процент ) / 12)изчисления
+
+        double interestPerMonth = sum * (interestRate/100)/12;
+        double totalSum = sum+months*interestPerMonth;
+
+        System.out.print(totalSum);
+        {
+
+        }
+    }
+}
+......................................................
+package Exc;
+
+import java.util.Scanner;
+
+public class E4VacationBooksList {
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        int sheetInBook = Integer.parseInt(scanner.nextLine());
+        int sheetPerHour = Integer.parseInt(scanner.nextLine());
+        int readDay = Integer.parseInt(scanner.nextLine());
+
+        int oneBook = sheetInBook/sheetPerHour;
+        int readHour = oneBook/readDay;
+        System.out.print(readHour);
+    }
+}
+.............................................................
+package Exc;
+
+import java.util.Scanner;
+
+public class E8FishTank {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int length = Integer.parseInt(scanner.nextLine());
+        int width = Integer.parseInt(scanner.nextLine());
+        int height = Integer.parseInt(scanner.nextLine());
+        double percentage = Double.parseDouble(scanner.nextLine());
+        
+        int vo = length*width*height;
+        double litre = vo * 0.001;
+        double prFlora = percentage*0.01;
+        double tankLitre = litre*(1-prFlora);
+        System.out.printf("%.2f",tankLitre);
+    }
+
+}
+
