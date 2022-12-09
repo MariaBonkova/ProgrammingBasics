@@ -1,0 +1,150 @@
+package Nestedloop;
+
+public class Clock {
+    public static void main(String[] args) {
+        for (int h = 0; h <=23 ; h++) {
+            for (int m = 0; m <=59 ; m++) {
+                System.out.printf("%d:%02d\n",h,m);
+
+            }
+
+        }
+    }
+}
+......................................
+package Nestedloop;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        for (int i = 1; i <=10 ; i++) {
+            for (int j = 1; j <= 10; j++) {
+                System.out.printf("%d*%d=%d\n",i,j, i*j);
+
+            }
+
+        }
+    }
+}
+.....................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class Combinations {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        int count=0;
+        for (int i = 0; i <= n ; i++) {
+            for (int j = 0; j <= n ; j++) {
+                for (int k = 0; k <= n ; k++) {
+                    if(i +j+k ==n){
+                        count++;
+
+                    }
+
+                }
+
+            }
+            
+        }System.out.printf("%d",count);
+    }
+}
+................................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class SumofTwoNumbers {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+
+        int startNUM= Integer.parseInt(scanner.nextLine());
+        int endNUM= Integer.parseInt(scanner.nextLine());
+        int magicNUM= Integer.parseInt(scanner.nextLine());
+        int count=0;
+        boolean isFound = false;
+        for (int i = startNUM; i <=endNUM ; i++) {
+            for (int j = startNUM; j <= endNUM; j++) {
+                count++;
+                if (i+j == magicNUM) {
+                    isFound = true;
+
+                    System.out.printf("Combination N:%d (%d + %d = %d)", count, i, j, magicNUM);
+                    break;
+                }
+            }if (isFound) {
+               break;
+            }
+
+        }
+
+       if(!isFound) {
+            System.out.printf("%d combinations - neither equals %d",count,magicNUM);
+        }
+    }
+}
+..................................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class Travelling {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        //Ани обича да пътува и иска тази година да посети няколко различни дестинации. Като си избере дестинация,
+        //ще прецени колко пари ще й трябват, за да отиде до там и ще започне да спестява. Когато е спестила
+        //достатъчно, ще може да пътува.
+        //От конзолата всеки път ще се четат първо дестинацията и минималния бюджет, който ще е нужен за
+        //пътуването, реално число.
+        //След това ще се четат няколко суми, реални числа, които Ани спестява като работи и когато успее да събере
+        //достатъчно за пътуването, ще заминава, като на конзолата трябва да се изпише:
+        //&quot;Going to {дестинацията}!&quot;
+        //Когато е посетила всички дестинации, които иска, вместо дестинация ще въведе &quot;End&quot; и програмата ще
+        //приключи.
+
+        String input  = scanner.nextLine();
+        while (!input.equals("End")){
+            String destination = (input);
+            double budget = Double.parseDouble(scanner.nextLine());
+
+            double saveMoney=0;
+            while (saveMoney<=budget){
+               double money =Double.parseDouble(scanner.nextLine());
+                saveMoney=saveMoney+money;
+            }
+            System.out.printf("Going to %s!\n",destination);
+            input= scanner.nextLine();
+
+        }
+
+    }
+}
+...................................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class Building {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        int floors =Integer.parseInt(scanner.nextLine());
+        int rooms =Integer.parseInt(scanner.nextLine());
+String letter ="";
+        for (int i = floors; i >=1; i--) {
+            for (int j = 0; j <= rooms; j++) {
+                
+                if (i == floors) {
+                    letter="L";
+                }else if (i%2==0){
+                    letter = "O";
+
+                }else if (i%2==1){
+                    letter="A";
+                }
+                System.out.printf("%s%d%d ",letter,i,j);
+            }
+            System.out.println();
+        }
+    }
+}
