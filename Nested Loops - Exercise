@@ -1,0 +1,169 @@
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class E1NumberPyramid {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        int n =Integer.parseInt(scanner.nextLine());
+        int current=1;
+        boolean isDone=false;
+        for (int rows = 1; rows <=n ; rows++) {
+            for (int cols = 1; cols <=rows; cols++) {
+                System.out.print(current + " ");
+                if (current==n) {
+                    isDone=true;
+                    break;
+                }
+                current++;
+            }
+            if(isDone){
+                break;
+            }
+            System.out.println();
+
+        }
+    }
+}
+.................................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class e2EqualSumsEvenOddPosition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int firsNum = Integer.parseInt(scanner.nextLine());
+        int secondNum = Integer.parseInt(scanner.nextLine());
+        for (int i = firsNum; i <= secondNum; i++) {
+            int number =i;
+            int even = 0;
+            int odd = 0;
+            for (int j = 6; j >= 1; j--) {
+                int digit = number % 10;
+                number /= 10;
+
+                if (j % 2 == 0) {
+                    even = even + digit;
+
+                } else {
+                    odd = odd + digit;
+                }
+
+            }
+
+            if (even == odd) {
+                System.out.print(i+ " ");
+            }
+
+
+        }
+    }
+}
+.....................................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class e3SumPrimNonPrime {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+      //  int n = Integer.parseInt(scanner.nextLine());
+        String input  = scanner.nextLine();
+        int prime=0;
+        int nonPrime=0;
+        while (!input.equals("stop")){
+            int num = Integer.parseInt(input);
+            if (num<0){
+                System.out.println("Number is negative.");
+                input= scanner.nextLine();
+                continue;
+            }
+            boolean isPrime=true;
+            for (int i = 2; i <=num-1 ; i++) {
+                if(num%i==0){
+                  isPrime=false;
+                    break;
+                }
+            }
+
+            if(isPrime){
+                prime=prime+num;
+            }else {
+                nonPrime+=num;
+            }
+            input= scanner.nextLine();
+
+        }
+        System.out.printf("Sum of all prime numbers is: %d\n",prime);
+
+        System.out.printf("Sum of all non prime numbers is: %d\n",nonPrime);
+    }
+}
+.....................................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class e4TraintheTrainers {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        int judj= Integer.parseInt(scanner.nextLine());
+        String proect  = scanner.nextLine();
+        double sum=0;
+        double avGrade=0;
+        double allSumAverage=0;
+        int count=0;
+
+    while (!proect.equals("Finish")){
+        count++;
+
+
+            for (int i = 1; i <=judj ; i++) {
+                double grade =Double.parseDouble(scanner.nextLine());
+                sum = sum + grade;
+                avGrade=sum/judj;
+
+
+            }
+           System.out.printf("%s - %.2f.\n",proect,avGrade);
+            allSumAverage=allSumAverage+avGrade;
+           // allSumAverage/=count;
+            sum=sum*0;
+            avGrade=avGrade*0;
+
+            proect= scanner.nextLine();
+        }
+        System.out.printf("Student's final assessment is %.2f.",allSumAverage/count);
+    }
+}
+......................................................................
+package Nestedloop;
+
+import java.util.Scanner;
+
+public class e6SpecialNumbers {
+    public static void main(String[] args) {
+        Scanner  scanner = new Scanner(System.in);
+        int n =Integer.parseInt(scanner.nextLine());
+        for (int i = 1; i <=9 ; i++) {
+            for (int j = 1; j <=9; j++) {
+                for (int k = 1; k <=9 ; k++) {
+                    for (int l = 1; l <=9 ; l++) {
+                        if(n%i==0 && n%j==0 &&n%k==0 && n%l==0){
+                            System.out.printf("%d%d%d%d ",i,j,k,l);
+                        }
+
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}
+................................................
+
